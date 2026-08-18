@@ -57,10 +57,10 @@ char	*load_and_read(char *path)
 
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
-		error_exit("could not open map file");
+		error_exit("could not open map file", NULL);
 	raw = reader(fd);
 	close(fd);
 	if (!raw)
-		error_exit("could not read map file");
+		error_exit("could not read map file", NULL);
 	return (raw);
 }

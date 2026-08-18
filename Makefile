@@ -10,6 +10,9 @@ SRC				=	\
 					main.c \
 					parsing/reader.c \
 					parsing/split_lines.c \
+					parsing/parse_color.c \
+					parsing/parse_headers.c \
+					parsing/build_map.c \
 					error_exit/exit.c
 					
 

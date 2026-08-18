@@ -10,9 +10,6 @@
 # include <fcntl.h>
 # include "libft.h"
 
-# include "parsing.h"
-# include "error_exit.h"
-
 typedef struct s_color
 {
 	int	r;
@@ -40,6 +37,8 @@ typedef struct s_scene
 	int		player_x;
 	int		player_y;
 	char	player_dir;
+	char	**raw_lines;
+	int		map_start;
 }	t_scene;
 
 typedef struct s_seen
@@ -51,5 +50,8 @@ typedef struct s_seen
 	int	f;
 	int	c;
 }	t_seen;
+
+# include "parsing.h"
+# include "error_exit.h"
 
 #endif
