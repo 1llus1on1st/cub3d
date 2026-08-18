@@ -4,5 +4,7 @@
 char	*load_and_read(char *path);
 char	*ft_strjoin_free(char *s1, char *s2);
 char	**split_lines(char *raw);
+int		parse_headers(char **lines, t_scene *scene);
+int		parse_color(char *content, t_color *color);
 
 #endif

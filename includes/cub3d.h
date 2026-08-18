@@ -42,4 +42,14 @@ typedef struct s_scene
 	char	player_dir;
 }	t_scene;
 
+typedef struct s_seen
+{
+	int	no;
+	int	so;
+	int	we;
+	int	ea;
+	int	f;
+	int	c;
+}	t_seen;
+
 #endif
