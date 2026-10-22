@@ -1,14 +1,16 @@
 #ifndef CUB3D_H
 # define CUB3D_H
 
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 12
-#endif
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 12
+# endif
 
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
 # include "libft.h"
+# include "parsing.h"
+# include "error_exit.h"
 
 typedef struct s_color
 {
@@ -50,8 +52,5 @@ typedef struct s_seen
 	int	f;
 	int	c;
 }	t_seen;
-
-# include "parsing.h"
-# include "error_exit.h"
 
 #endif

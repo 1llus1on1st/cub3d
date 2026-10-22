@@ -25,7 +25,8 @@ static int	store_path(char **field, int *seen, char *content, t_scene *scene)
 	return (1);
 }
 
-static int	store_color(t_color *field, int *seen, char *content, t_scene *scene)
+static int	store_color(t_color *field, int *seen, char *content,
+		t_scene *scene)
 {
 	if (*seen)
 		error_exit("duplicate color identifier", scene);
@@ -39,17 +40,23 @@ static int	dispatch_header(char *line, t_scene *scene, t_seen *seen)
 {
 	char	*content;
 
-	if ((content = match_header(line, "NO")))
+	content = match_header(line, "NO");
+	if (content)
 		return (store_path(&scene->path_no, &seen->no, content, scene));
-	if ((content = match_header(line, "SO")))
+	content = match_header(line, "SO");
+	if (content)
 		return (store_path(&scene->path_so, &seen->so, content, scene));
-	if ((content = match_header(line, "WE")))
+	content = match_header(line, "WE");
+	if (content)
 		return (store_path(&scene->path_we, &seen->we, content, scene));
-	if ((content = match_header(line, "EA")))
-		return (store_path(&scene->path_ea, &seen->ea, content, scene ));
-	if ((content = match_header(line, "F")))
+	content = match_header(line, "EA");
+	if (content)
+		return (store_path(&scene->path_ea, &seen->ea, content, scene));
+	content = match_header(line, "F");
+	if (content)
 		return (store_color(&scene->floor_color, &seen->f, content, scene));
-	if ((content = match_header(line, "C")))
+	content = match_header(line, "C");
+	if (content)
 		return (store_color(&scene->ceiling_color, &seen->c, content, scene));
 	return (0);
 }
@@ -60,15 +67,9 @@ int	parse_headers(char **lines, t_scene *scene)
 	int		i;
 
 	ft_bzero(&seen, sizeof(t_seen));
-	i = 0;
-	while (lines[i] && lines[i][0] == '\0')
-		i++;
+	i = skip_blank_lines(lines, 0);
 	while (lines[i] && dispatch_header(lines[i], scene, &seen))
-	{
-		i++;
-		while (lines[i] && lines[i][0] == '\0')
-			i++;
-	}
+		i = skip_blank_lines(lines, i + 1);
 	if (!seen.no || !seen.so || !seen.we || !seen.ea || !seen.f || !seen.c)
 		error_exit("missing scene element(s)", scene);
 	return (i);

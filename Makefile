@@ -8,6 +8,7 @@ SRC_DIR			=	src
 
 SRC				=	\
 					main.c \
+					parsing/blank_lines.c \
 					parsing/reader.c \
 					parsing/split_lines.c \
 					parsing/parse_color.c \
