@@ -32,6 +32,9 @@ int	main(int argc, char **argv)
 	scene.raw_lines = lines;
 	map_start = parse_headers(lines, &scene);
 	build_map(lines, map_start, &scene);
+	validate_map(&scene);
+	// printf("player: x=%d y=%d dir=%c\n",
+	// scene.player_x, scene.player_y, scene.player_dir);
 	i = 0;
 	while (i < map_start)
 		free(lines[i++]);

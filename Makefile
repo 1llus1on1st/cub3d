@@ -14,6 +14,9 @@ SRC				=	\
 					parsing/parse_color.c \
 					parsing/parse_headers.c \
 					parsing/build_map.c \
+					validation/validate_map.c \
+					validation/validate.c \
+					validation/validate_closed.c \
 					error_exit/exit.c
 					
 

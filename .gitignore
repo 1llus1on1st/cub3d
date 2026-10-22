@@ -1,6 +1,9 @@
 compile_commands.json
-./minilibx_opengl_20191021
-./obj
+minilibx_opengl_20191021
+obj
 cub3d
 .DS_Store
 fr.norme.pdf
+maps_parsing
+maps_validation
+project_manager

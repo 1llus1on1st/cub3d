@@ -8,49 +8,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <stdio.h>
+
 # include "libft.h"
+# include "types.h"
 # include "parsing.h"
+# include "validation.h"
 # include "error_exit.h"
-
-typedef struct s_color
-{
-	int	r;
-	int	g;
-	int	b;
-}	t_color;
-
-typedef struct s_map
-{
-	char	**grid;
-	int		*row_len;
-	int		width;
-	int		height;
-}	t_map;
-
-typedef struct s_scene
-{
-	t_map	map;
-	char	*path_no;
-	char	*path_so;
-	char	*path_we;
-	char	*path_ea;
-	t_color	floor_color;
-	t_color	ceiling_color;
-	int		player_x;
-	int		player_y;
-	char	player_dir;
-	char	**raw_lines;
-	int		map_start;
-}	t_scene;
-
-typedef struct s_seen
-{
-	int	no;
-	int	so;
-	int	we;
-	int	ea;
-	int	f;
-	int	c;
-}	t_seen;
 
 #endif
