@@ -10,9 +10,11 @@
 # include <fcntl.h>
 # include <stdio.h>
 
+# include "mlx.h"
 # include "libft.h"
 # include "types.h"
 # include "parsing.h"
+# include "game.h"
 # include "validation.h"
 # include "error_exit.h"
 

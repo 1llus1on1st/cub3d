@@ -42,4 +42,16 @@ typedef struct s_seen
 	int	c;
 }	t_seen;
 
+typedef struct s_game
+{
+	void	*mlx;
+	void	*win;
+	void	*img;
+	char	*addr;
+	int		bpp;
+	int		line_len;
+	int		endian;
+	t_scene	scene;
+}	t_game;
+
 #endif

@@ -33,17 +33,20 @@ static void	free_raw_lines(t_scene *scene)
 	free(scene->raw_lines);
 }
 
+void	free_scene(t_scene *scene)
+{
+	free_raw_lines(scene);
+	free(scene->path_no);
+	free(scene->path_so);
+	free(scene->path_we);
+	free(scene->path_ea);
+	free_map(&scene->map);
+}
+
 void	error_exit(char *msg, t_scene *scene)
 {
 	if (scene)
-	{
-		free_raw_lines(scene);
-		free(scene->path_no);
-		free(scene->path_so);
-		free(scene->path_we);
-		free(scene->path_ea);
-		free_map(&scene->map);
-	}
+		free_scene(scene);
 	ft_putstr_fd("Error\n", 2);
 	ft_putstr_fd(msg, 2);
 	ft_putstr_fd("\n", 2);
