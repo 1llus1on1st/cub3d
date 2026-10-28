@@ -12,12 +12,15 @@ SRC				=	\
 					game/hooks.c \
 					game/init.c \
 					game/pixel.c \
+					game/player.c \
 					parsing/blank_lines.c \
 					parsing/build_map.c \
 					parsing/parse_color.c \
 					parsing/parse_headers.c \
 					parsing/reader.c \
 					parsing/split_lines.c \
+					render/ray_init.c \
+					render/raycast.c \
 					validation/validate_closed.c \
 					validation/validate_map.c \
 					validation/validate.c

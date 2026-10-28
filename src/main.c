@@ -45,6 +45,7 @@ int	main(int argc, char **argv)
 	ft_bzero(&game, sizeof(t_game));
 	load_scene(&game, argv[1]);
 	init_game(&game);
+	init_player(&game);
 	// printf("player: x=%d y=%d dir=%c\n",
 	// 	game.scene.player_x, game.scene.player_y, game.scene.player_dir);
 	setup_hooks(&game);

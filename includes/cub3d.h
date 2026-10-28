@@ -9,6 +9,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdio.h>
+# include <math.h>
 
 # include "mlx.h"
 # include "libft.h"
@@ -16,6 +17,7 @@
 # include "parsing.h"
 # include "game.h"
 # include "validation.h"
+# include "render.h"
 # include "error_exit.h"
 
 #endif
